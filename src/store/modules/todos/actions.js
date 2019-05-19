@@ -23,7 +23,6 @@ export const actions = {
 
   async filterTodos({ commit }, e) {
     const limit = parseInt(e.target.value);
-    console.log(limit);
     const response = await axios.get(
       `https://jsonplaceholder.typicode.com/todos?_limit=${limit}`
     );
@@ -35,7 +34,6 @@ export const actions = {
       `https://jsonplaceholder.typicode.com/todos/${updTodo.id}`,
       updTodo
     );
-    console.log(response.data);
     commit("updateTodo", response.data);
   }
 };
